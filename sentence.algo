@@ -1,0 +1,29 @@
+ALGORITHM algorithm_name
+VAR
+    voy:=INTEGER;
+    lenght:=INTEGER;
+    nbWd:=INTEGER;
+    sentence:=STRING;
+    char:=STRING;
+BEGIN
+    REPEAT
+        Read(char)
+        sentence:= sentence+char;
+    UNTIL (char='.')
+
+    long:=sentence.lenght;
+    FOR i FROM 0 TO lenght STEP 1  DO
+        IF (sentence[i]='a' OR sentence[i]='o' OR sentence[i]='i' OR sentence[i]='e' OR sentence[i]='y' OR sentence[i]='u') THEN
+            voy:= voy+1;
+        END_IF
+
+        IF (sentence[i]=' ' OR sentence[i]='.') THEN
+            nbWd:= nbWd +1;
+        END_IF
+    END_FOR
+
+    Write(long)
+    Write(nbWd)
+    Write(voy)
+    
+END
