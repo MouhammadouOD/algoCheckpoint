@@ -1,18 +1,23 @@
-ALGORITHM algorithm_name
+ALGORITHM sentence
 VAR
     voy:=INTEGER;
-    lenght:=INTEGER;
+    long:=INTEGER;
     nbWd:=INTEGER;
     sentence:=STRING;
     char:=STRING;
 BEGIN
+    // lecture des caractères de la phrase  jusqu'à rencontrer un point 	
     REPEAT
         Read(char)
         sentence:= sentence+char;
+        
     UNTIL (char='.')
 
+    //TRES BIEN FAIT
     long:=sentence.lenght;
-    FOR i FROM 0 TO lenght STEP 1  DO
+    
+    // calcul du nombre de mots et du nombre de voyelles 
+    FOR i FROM 0 TO long STEP 1  DO
         IF (sentence[i]='a' OR sentence[i]='o' OR sentence[i]='i' OR sentence[i]='e' OR sentence[i]='y' OR sentence[i]='u') THEN
             voy:= voy+1;
         END_IF
